@@ -1,0 +1,8 @@
+<launch>
+	<arg name = "port"/>
+	<node name ="driver" pkg ="imu_driver" type ="driver.py" args="$(arg port)" output="screen">
+	<param name='port' value='$(arg port)' />
+	</node>
+	<node name="convert_to_quaternion" pkg="imu_driver" type="convert_to_quaternion.py" output="screen">
+    </node>
+</launch>
